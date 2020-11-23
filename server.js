@@ -1,9 +1,10 @@
+//connection with express framework, bodyparser and mongodb
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const ObjectId = require('mongodb').ObjectID
 
-
+//setting the authentication to the database
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://adm000:adm000@cluster0.ggpsq.mongodb.net/MotorBikeDealer?retryWrites=true&w=majority";
 
@@ -15,7 +16,7 @@ MongoClient.connect(uri, (err, client) => {
         console.log('Server running on port 3000')
     })
 })
-
+//CRUD functions
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.set('view engine', 'ejs')
