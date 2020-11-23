@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD</title>
+</head>
+<body>
+
+<h2>Edit</h2>
+  <% data.forEach(function(details) { %>
+    <form action="/edit/<%= details._id %>" method="POST">
+      <input type="text" value="<%= details.model %>" name="model">
+      <input type="text" value="<%= details.brand %>" name="brand">
+      <input type= 0 value="<%= details.year %>" name="year">
+      <input type="text" value="<%= details.engineSize %>" name="engineSize">
+      <input type= true value="<%= details.availability %>" name="availability">
+      <br />
+      <button><a href="/show">Return</a></button>
+      <button type="submit">Submit</button>
+    </form>
+  <% }) %>
+
+</body>
+</html>
